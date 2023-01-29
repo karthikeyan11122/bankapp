@@ -1,0 +1,17 @@
+The front end and bank end project
+
+====================================
+
+1.crat a floder in bank --  ng new folder name,cd folder name ,them ng s
+2.open code for enter a program 
+
+3.creat commponents in our project page :ng g c "name"
+4.then link all styles (bootstrap,font awwsom,googil fonts ext.)to our index.html
+
+5.then set the path way of our all commponent pages to "app-routing-modul.ts"
+6.edit desgin in log in page 
+7.modul installing
+8.ReactiveFormsModule add on modul.ts
+
+
+

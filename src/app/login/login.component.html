@@ -1,0 +1,49 @@
+
+    <nav class="navbar bg-body-tertiary" style="padding: 0;"  >
+        <div class="container-fluid" style="background-color:darkslateblue">
+          <a class="navbar-brand" href="#" style="color: aliceblue; font-size: 50px; text-align: center;">
+            <img src="https://www.uml.edu/Images/about_tcm18-233647.jpg" alt="Logo" width="45" height="60" class="d-inline-block align-text-top">
+            Banking
+          </a>
+        </div>
+      </nav>
+    <div class="row">
+        <div class="col-5 mt-5">
+<img src="https://th.bing.com/th/id/OIP.sbYiHCcD_DZGWUPbuJKANAHaET?pid=ImgDet&rs=1" alt="no image">
+
+        </div>
+        <div class="col-5 mt-5  " style="padding-right: 10px;">
+          <p style="font-size: 30px; text-align: center;">Log In</p>
+            <form (ngSubmit)="login()" [formGroup]="loginForm" class="border border-primary-subtle">
+                <div class="mb-3">
+                  <label for="" class="form-label m-3">Account No:-</label>
+                  <input name="acno" formControlName="acno" type="text" class="form-control" id="" placeholder="Account No">
+                </div>
+                              <!-- invalid acno -->
+              <div *ngIf="this.loginForm.get('acno')?.errors&&this.loginForm.get('acno')?.touched" class="text-danger ">Invalid Account Number</div>
+
+                <div class="mb-3">
+                  <label for="" class="form-label m-3">Password:-</label>
+                  <input name="pswn" formControlName="pswn" type="password" class="form-control" id="" placeholder="Password">
+                </div>
+                                              <!-- invalid pswd -->
+              <div *ngIf="this.loginForm.get('pswd')?.errors&&this.loginForm.get('pswd')?.touched" class="text-danger ">Invalid Account Number</div>
+
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <!-- error meggage -->
+                <div class="text-danger">  {{errorMsg}}</div>
+                <button  type="submit" class="btn btn-primary m-3">Log In
+                  <span *ngIf="successMsg"   class="spinner-border text-light" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </span>
+                </button>
+
+                <a class="p-5" routerLink="/register">click Hear to Register</a>
+              </form>
+
+        </div>
+    </div>
+

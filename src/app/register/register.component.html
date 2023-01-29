@@ -1,0 +1,48 @@
+<nav class="navbar bg-body-tertiary" style="padding: 0;"  >
+    <div class="container-fluid" style="background-color:darkslateblue">
+      <a class="navbar-brand" href="#" style="color: aliceblue; font-size: 50px; text-align: center;">
+        <img src="https://www.uml.edu/Images/about_tcm18-233647.jpg" alt="Logo" width="45" height="60" class="d-inline-block align-text-top">
+        Banking
+      </a>
+    </div>
+  </nav>
+<div class="row">
+  <div class="col-4"></div>
+<div class="col-5">
+      <h3 style="text-align: center;">Register</h3>
+      <form (ngSubmit)="register()" [formGroup]="registerForm" class="border border-primary-subtle">
+    
+        <div class="mb-3">
+          <label for="" class="form-label m-3">User Nmae-</label>
+          <input name="uname" formControlName="uname" type="text" class="form-control" id="" placeholder="User Name">
+        </div>
+        <div *ngIf="this.registerForm.get('uname')?.errors&&this.registerForm.get('uname')?.touched" class="text-danger ">Invalid User Name</div>
+    
+    
+        <div class="mb-3">
+          <label for="" class="form-label m-3">Account No:-</label>
+          <input name="acno" formControlName="acno" type="text" class="form-control" id="" placeholder="Account No">
+        </div>
+                      <!--invalid acno -->
+      <div *ngIf="this.registerForm.get('acno')?.errors&&this.registerForm.get('acno')?.touched" class="text-danger ">Invalid Account Number</div>
+    
+        <div class="mb-3">
+          <label for="" class="form-label m-3">Password:-</label>
+          <input name="pswn" formControlName="pswn" type="password" class="form-control" id="" placeholder="Password">
+        </div>
+                                      <!-- invalid pswd -->
+       <div *ngIf="this.registerForm.get('pswd')?.errors&&this.registerForm.get('pswd')?.touched" class="text-danger ">Invalid Password</div>
+    
+         <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button  type="submit" class="btn btn-primary m-3">register</button>
+    
+        <a class="p-5" routerLink="/">click Hear to login</a>
+      </form>
+      <div class="col-3"></div>
+      
+
+</div>
+</div>

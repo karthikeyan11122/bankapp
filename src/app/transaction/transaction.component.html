@@ -1,0 +1,42 @@
+<h1>Transaction History</h1>
+<hr>
+
+<div class="container border border-5 rounded-5 border-success p-3 m-5 ">
+    <!-- row search export -->
+    <div class="row">
+        <div class="col-lg-4">
+            <h3>Check Your  History</h3>
+        </div>
+        <div class="col-lg-4">
+            <label for="search">Search By</label>&nbsp;
+            <input (keyup)="search($event)" type="text" id="seach" placeholder="Transaction Type">
+        </div>
+        <div class="col-lg-4">
+                    <input (click)="generatePdf()" type="button" value="Export" class="btn btn-danger">
+        </div>
+        <!-- Table -->
+
+        <table class="table border border-2 border-primary mt-3 text-center" >
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Transaction Type</th>
+                    <th>From Account</th>
+                    <th>To Account</th>
+                    <th>Amount</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let transaction of allTransaction | filter : searchKey : 'type' ; let i = index">
+                    <th>{{i+1}}</th>
+                    <th class="text-warning">{{transaction.type}}</th>
+                    <th class="text-success">{{transaction.fromAcno}}</th>
+                    <th class="text-primary">{{transaction.toAcno}}</th>
+                    <th class="text-danger"><b>{{transaction.amount}}</b></th>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</div>

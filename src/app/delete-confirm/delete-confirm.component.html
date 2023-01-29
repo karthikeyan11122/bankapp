@@ -1,0 +1,6 @@
+<div *ngIf="item" class="container text-center mt-5">
+        <img src="https://media.tenor.com/images/70584b7a6c3869052d61ae59dcbf9632/tenor.gif" alt="">
+        <p><b>Are you sure ,do you want to <span class="text-danger">delete</span> the account</b></p>
+        <button (click)="deleteAcc()" class="btn btn-danger">Yes</button> &nbsp; &nbsp;
+        <button (click)="cancel()" class="btn btn-success">No</button>
+</div>
